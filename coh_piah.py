@@ -70,7 +70,7 @@ def n_palavras_diferentes(lista_palavras):
     return len(freq)
 
 def compara_assinatura(as_a, as_b):
-    '''IMPLEMENTAR. Essa funcao recebe duas assinaturas de texto e deve devolver o grau de similaridade nas assinaturas.'''
+    ''' Essa funcao recebe duas assinaturas de texto e deve devolver o grau de similaridade nas assinaturas.'''
     soma = 0
     for i in range(len(as_a)):
         soma += abs(as_a[i] - as_b[i])
@@ -78,7 +78,7 @@ def compara_assinatura(as_a, as_b):
     return soma/6
 
 def calcula_assinatura(texto):
-    '''IMPLEMENTAR. Essa funcao recebe um texto e deve devolver a assinatura do texto.'''
+    ''' Essa funcao recebe um texto e deve devolver a assinatura do texto.'''
     wal = tamanho_medio_palavras(texto)
     ttr = relacao_type_token(texto)
     hlr = razao_hapax_legomana(texto)
@@ -89,7 +89,7 @@ def calcula_assinatura(texto):
     return [wal, ttr, hlr, sal, sac, pal]
 
 def avalia_textos(textos, ass_cp):
-    '''IMPLEMENTAR. Essa funcao recebe uma lista de textos e uma assinatura ass_cp e deve devolver o numero (1 a n) do texto com maior probabilidade de ter sido infectado por COH-PIAH.'''
+    ''' Essa funcao recebe uma lista de textos e uma assinatura ass_cp e deve devolver o numero (1 a n) do texto com maior probabilidade de ter sido infectado por COH-PIAH.'''
     as_b = calcula_assinatura(textos[0])
     menor_valor = compara_assinatura(ass_cp,as_b)
     posicao = 0
